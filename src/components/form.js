@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Button from '@mui/material/Button';
 
 const UserForm = () => {
   const [occupations, setOccupations] = useState([]);
@@ -119,7 +120,7 @@ const UserForm = () => {
        ))}
      </select>
    </div>
-   <button type="submit">Submit</button>
+   <Button variant="contained" type="submit">Submit</Button>
    {formSubmitted && (
      <div>Form submitted successfully</div>
    )}
