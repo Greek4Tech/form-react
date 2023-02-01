@@ -121,6 +121,7 @@ const UserForm = () => {
      </select>
    </div>
    <Button variant="contained" type="submit">Submit</Button>
+   <Button variant="contained" type="submit">Submit</Button>
    {formSubmitted && (
      <div>Form submitted successfully</div>
    )}
