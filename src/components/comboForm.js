@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
+// import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
+// import FormControlLabel from '@mui/material/FormControlLabel';
+// import Checkbox from '@mui/material/Checkbox';
+// import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
@@ -15,13 +15,14 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Select from '@mui/material/Select';
+// import Select, { SelectChangeEvent } from '@mui/material/Select';
 
 const theme = createTheme();
 
 const ComboForm = () => {
-  const [occupations, setOccupations] = useState([]);
-  const [states, setStates] = useState([]);
+  // const [occupations, setOccupations] = useState([]);
+  // const [states, setStates] = useState([]);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -32,15 +33,15 @@ const ComboForm = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
 
 
-  useEffect(() => {
-    fetch('https://frontend-take-home.fetchrewards.com/form')
-      .then(res => res.json())
-      .then(data => {
-        setOccupations(data.occupations);
-        setStates(data.states);
-      })
-      .catch(error => console.error(error));
-  }, []);
+  // useEffect(() => {
+  //   fetch('https://frontend-take-home.fetchrewards.com/form')
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       setOccupations(data.occupations);
+  //       setStates(data.states);
+  //     })
+  //     .catch(error => console.error(error));
+  // }, []);
 
   const handleChange = e => {
     setFormData({
