@@ -123,7 +123,7 @@ const ComboForm = () => {
               </Grid>
               <Grid item xs={12} sm={6}>
                 <FormControl fullWidth>
-                  <InputLabel id="demo-simple-select-label">Age</InputLabel>
+                  <InputLabel id="demo-simple-select-label">Select an occupation</InputLabel>
                   <Select
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
@@ -137,6 +137,22 @@ const ComboForm = () => {
                   </Select>
                 </FormControl>
               </Grid>
+              <Grid item xs={12} sm={6}>
+              <FormControl fullWidth>
+                  <InputLabel id="demo-simple-select-label">Select a State</InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value=""
+                    label="Age"
+                    onChange={handleChange}
+                  >
+                    <MenuItem value={10}>Ten</MenuItem>
+                    <MenuItem value={20}>Twenty</MenuItem>
+                    <MenuItem value={30}>Thirty</MenuItem>
+                  </Select>
+                </FormControl>
+                </Grid>
             </Grid>
           </Box>
         </Box>
