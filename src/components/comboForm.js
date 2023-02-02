@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+// import React, { useState, useEffect } from 'react';
+import React, {useState} from 'react';
 import Avatar from '@mui/material/Avatar';
 // import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -30,7 +31,7 @@ const ComboForm = () => {
     occupation: '',
     state: ''
   });
-  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [, setFormSubmitted] = useState(false);
 
 
   // useEffect(() => {
