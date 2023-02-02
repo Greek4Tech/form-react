@@ -12,23 +12,27 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
 
 const theme = createTheme();
 
 const ComboForm = () => {
-    const [occupations, setOccupations] = useState([]);
-    const [states, setStates] = useState([]);
-    const [formData, setFormData] = useState({
-      name: '',
-      email: '',
-      password: '',
-      occupation: '',
-      state: ''
-    });
-    const [formSubmitted, setFormSubmitted] = useState(false);
+  const [occupations, setOccupations] = useState([]);
+  const [states, setStates] = useState([]);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    password: '',
+    occupation: '',
+    state: ''
+  });
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
 
-useEffect(() => {
+  useEffect(() => {
     fetch('https://frontend-take-home.fetchrewards.com/form')
       .then(res => res.json())
       .then(data => {
@@ -68,7 +72,7 @@ useEffect(() => {
 
   return (
     <ThemeProvider theme={theme}>
-        <Container component="main" maxWidth="xs">
+      <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
           sx={{
@@ -93,14 +97,50 @@ useEffect(() => {
                   required
                   fullWidth
                   id="firstName"
-                  label="First Name"
+                  label="Full Name"
                   autoFocus
                 />
               </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  required
+                  fullWidth
+                  id="lastName"
+                  label="Email"
+                  name="lastName"
+                  autoComplete="family-name"
+                />
               </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  required
+                  fullWidth
+                  id="lastName"
+                  label="Password"
+                  name="lastName"
+                  autoComplete="family-name"
+                />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <FormControl fullWidth>
+                  <InputLabel id="demo-simple-select-label">Age</InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value=""
+                    label="Age"
+                    onChange={handleChange}
+                  >
+                    <MenuItem value={10}>Ten</MenuItem>
+                    <MenuItem value={20}>Twenty</MenuItem>
+                    <MenuItem value={30}>Thirty</MenuItem>
+                  </Select>
+                </FormControl>
+              </Grid>
+            </Grid>
           </Box>
-          </Box>
-        </Container>
+        </Box>
+      </Container>
     </ThemeProvider>
   )
 
