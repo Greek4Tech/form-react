@@ -1,5 +1,4 @@
-// import React, { useState, useEffect } from 'react';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -22,8 +21,8 @@ import Select from '@mui/material/Select';
 const theme = createTheme();
 
 const ComboForm = () => {
-  // const [occupations, setOccupations] = useState([]);
-  // const [states, setStates] = useState([]);
+  const [occupations, setOccupations] = useState([]);
+  const [states, setStates] = useState([]);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -34,15 +33,15 @@ const ComboForm = () => {
   const [, setFormSubmitted] = useState(false);
 
 
-  // useEffect(() => {
-  //   fetch('https://frontend-take-home.fetchrewards.com/form')
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       setOccupations(data.occupations);
-  //       setStates(data.states);
-  //     })
-  //     .catch(error => console.error(error));
-  // }, []);
+  useEffect(() => {
+    fetch('https://frontend-take-home.fetchrewards.com/form')
+      .then(res => res.json())
+      .then(data => {
+        setOccupations(data.occupations);
+        setStates(data.states);
+      })
+      .catch(error => console.error(error));
+  }, []);
 
   const handleChange = e => {
     setFormData({
@@ -136,35 +135,43 @@ const ComboForm = () => {
               </Grid>
               <Grid item xs={12} sm={6}>
                 <FormControl fullWidth>
-                  <InputLabel id="demo-simple-select-label">Select an occupation</InputLabel>
+                  <InputLabel id="occupation-label">Select an Occupation</InputLabel>
                   <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    value=""
-                    label="Age"
+                    labelId="occupation-label"
+                    id="occupation"
+                    value={formData.occupation}
                     onChange={handleChange}
+                    required
                   >
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
+                    <MenuItem value="">Select an Occupation</MenuItem>
+                    {occupations.map(occupation => (
+                      <MenuItem key={occupation} value={occupation}>
+                        {occupation}
+                      </MenuItem>
+                    ))}
                   </Select>
                 </FormControl>
+
               </Grid>
               <Grid item xs={12} sm={6}>
                 <FormControl fullWidth>
-                  <InputLabel id="demo-simple-select-label">Select a State</InputLabel>
+                  <InputLabel id="state-label">Select a State</InputLabel>
                   <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    value=""
-                    label="Age"
+                    labelId="state-label"
+                    id="state"
+                    value={formData.state}
                     onChange={handleChange}
+                    required
                   >
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
+                    <MenuItem value="">Select a State</MenuItem>
+                    {states.map(state => (
+                      <MenuItem key={state.abbreviation} value={state.abbreviation}>
+                        {state.name}
+                      </MenuItem>
+                    ))}
                   </Select>
                 </FormControl>
+
                 <Button
                   type="submit"
                   fullWidth
