@@ -1,7 +1,7 @@
 // import React, { useState, useEffect } from 'react';
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Avatar from '@mui/material/Avatar';
-// import Button from '@mui/material/Button';
+import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 // import FormControlLabel from '@mui/material/FormControlLabel';
@@ -140,7 +140,7 @@ const ComboForm = () => {
                 </FormControl>
               </Grid>
               <Grid item xs={12} sm={6}>
-              <FormControl fullWidth>
+                <FormControl fullWidth>
                   <InputLabel id="demo-simple-select-label">Select a State</InputLabel>
                   <Select
                     labelId="demo-simple-select-label"
@@ -154,8 +154,17 @@ const ComboForm = () => {
                     <MenuItem value={30}>Thirty</MenuItem>
                   </Select>
                 </FormControl>
-                </Grid>
+                <Button
+                  type="submit"
+                  fullWidth
+                  variant="contained"
+                  sx={{ mt: 3, mb: 2 }}
+                >
+                  Sign Up
+                </Button>
+              </Grid>
             </Grid>
+
           </Box>
         </Box>
       </Container>
