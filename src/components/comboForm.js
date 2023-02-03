@@ -30,7 +30,7 @@ const ComboForm = () => {
     occupation: '',
     state: ''
   });
-  const [, setFormSubmitted] = useState(false);
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
 
   useEffect(() => {
@@ -178,8 +178,11 @@ const ComboForm = () => {
                   variant="contained"
                   sx={{ mt: 3, mb: 2 }}
                 >
-                  Sign Up
+                  Submit
                 </Button>
+                {formSubmitted && (
+                  <div>Form submitted successfully</div>
+                )}
               </Grid>
             </Grid>
 
