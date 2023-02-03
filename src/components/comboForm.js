@@ -94,11 +94,14 @@ const ComboForm = () => {
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <TextField
+                  type="text"
                   autoComplete="given-name"
-                  name="firstName"
-                  required
+                  id="name"
+                  name="name"
+                  value={formData.name}
                   fullWidth
-                  id="firstName"
+                  onChange={handleChange}
+                  required
                   label="Full Name"
                   autoFocus
                 />
