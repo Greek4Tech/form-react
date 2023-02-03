@@ -108,22 +108,30 @@ const ComboForm = () => {
               </Grid>
               <Grid item xs={12} sm={6}>
                 <TextField
-                  required
+                  type="email"
+                  autoComplete="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
                   fullWidth
-                  id="lastName"
-                  label="Email"
-                  name="lastName"
-                  autoComplete="family-name"
+                  onChange={handleChange}
+                  required
+                  label="Email Address"
+                  autoFocus
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
                 <TextField
-                  required
+                  type="password"
+                  autoComplete="new-password"
+                  id="password"
+                  name="password"
+                  value={formData.password}
                   fullWidth
-                  id="lastName"
+                  onChange={handleChange}
+                  required
                   label="Password"
-                  name="lastName"
-                  autoComplete="family-name"
+                  autoFocus
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
