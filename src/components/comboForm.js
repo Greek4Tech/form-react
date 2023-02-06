@@ -48,6 +48,7 @@ const ComboForm = () => {
       ...formData,
       [e.target.name]: e.target.value
     });
+    console.log(e)
   };
 
   const handleSubmit = e => {
@@ -139,6 +140,7 @@ const ComboForm = () => {
                   <Select
                     labelId="occupation-label"
                     id="occupation"
+                    name= "occupation"
                     value={formData.occupation}
                     onChange={handleChange}
                     required
@@ -159,6 +161,7 @@ const ComboForm = () => {
                   <Select
                     labelId="state-label"
                     id="state"
+                    name= "state"
                     value={formData.state}
                     onChange={handleChange}
                     required
