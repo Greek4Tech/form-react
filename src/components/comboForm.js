@@ -143,7 +143,7 @@ const ComboForm = () => {
                     onChange={handleChange}
                     required
                   >
-                    <MenuItem value="">Select an Occupation</MenuItem>
+                    <MenuItem value={formData.occupation}>Select an Occupation</MenuItem>
                     {occupations.map(occupation => (
                       <MenuItem key={occupation} value={occupation}>
                         {occupation}
