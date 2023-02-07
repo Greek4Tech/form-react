@@ -2,7 +2,7 @@ import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
+import TextValidator from '@mui/material/TextValidator';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
@@ -59,7 +59,7 @@ export default function SignUp() {
           <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
-                <TextField
+                <TextValidator
                   autoComplete="given-name"
                   name="firstName"
                   required
@@ -70,7 +70,7 @@ export default function SignUp() {
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
-                <TextField
+                <TextValidator
                   required
                   fullWidth
                   id="lastName"
@@ -80,7 +80,7 @@ export default function SignUp() {
                 />
               </Grid>
               <Grid item xs={12}>
-                <TextField
+                <TextValidator
                   required
                   fullWidth
                   id="email"
@@ -90,7 +90,7 @@ export default function SignUp() {
                 />
               </Grid>
               <Grid item xs={12}>
-                <TextField
+                <TextValidator
                   required
                   fullWidth
                   name="password"
