@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
+// import TextField from '@mui/material/TextField';
 // import FormControlLabel from '@mui/material/FormControlLabel';
 // import Checkbox from '@mui/material/Checkbox';
 // import Link from '@mui/material/Link';
@@ -91,10 +91,12 @@ const ComboForm = () => {
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+          <ValidatorForm        
+                onSubmit={handleSubmit}                
+            >
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
-                <TextField
+                <TextValidator
                   type="text"
                   autoComplete="given-name"
                   id="name"
@@ -108,7 +110,7 @@ const ComboForm = () => {
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
-                <TextField
+                <TextValidator
                   type="email"
                   autoComplete="email"
                   id="email"
@@ -122,7 +124,7 @@ const ComboForm = () => {
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
-                <TextField
+                <TextValidator
                   type="password"
                   autoComplete="new-password"
                   id="password"
@@ -190,7 +192,7 @@ const ComboForm = () => {
               </Grid>
             </Grid>
 
-          </Box>
+          </ValidatorForm>
         </Box>
       </Container>
     </ThemeProvider>
