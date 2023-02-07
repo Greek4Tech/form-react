@@ -2,8 +2,8 @@ import React from "react"
 import "./App.css"
 // import UserForm from './components/form'
 // import SignUp from "./components/template"
-// import ComboForm from "./components/comboForm"
-import ResetPasswordForm from "./components/validator";
+import ComboForm from "./components/comboForm"
+// import ResetPasswordForm from "./components/validator";
 
 
 function App() {
@@ -11,8 +11,8 @@ function App() {
     <div>
       {/* <UserForm />
       <SignUp /> */}
-      {/* <ComboForm /> */}
-      <ResetPasswordForm />
+      <ComboForm />
+      {/* <ResetPasswordForm /> */}
     </div>
   );
 }
