@@ -50,7 +50,12 @@ const ComboForm = () => {
       [e.target.name]: e.target.value
     });
     console.log(e)
+
+    if (formSubmitted) {
+      setFormSubmitted(false);
+    }
   };
+
 
   const handleSubmit = e => {
     e.preventDefault();
