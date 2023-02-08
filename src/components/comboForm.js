@@ -150,6 +150,7 @@ const ComboForm = () => {
                     id="occupation"
                     name= "occupation"
                     value={formData.occupation}
+                    label="Select an Occupation"
                     onChange={handleChange}
                     required
                   >
@@ -170,6 +171,7 @@ const ComboForm = () => {
                     labelId="state-label"
                     id="state"
                     name= "state"
+                    label= "Select a State"
                     value={formData.state}
                     onChange={handleChange}
                     required
