@@ -50,7 +50,12 @@ const ComboForm = () => {
       [e.target.name]: e.target.value
     });
     console.log(e)
+
+    if (formSubmitted) {
+      setFormSubmitted(false);
+    }
   };
+
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -88,8 +93,8 @@ const ComboForm = () => {
           <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
             <LockOutlinedIcon />
           </Avatar>
-          <Typography component="h1" variant="h5">
-            Sign up
+          <Typography mb={2} component="h1" variant="h5">
+            Sign Up Using Leo's Form
           </Typography>
           <ValidatorForm        
                 onSubmit={handleSubmit}                
