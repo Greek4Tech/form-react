@@ -18,6 +18,8 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 // import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
+import { fetchData } from '../services/formFetch';
+
 
 const theme = createTheme();
 
@@ -35,8 +37,7 @@ const ComboForm = () => {
 
 
   useEffect(() => {
-    fetch('https://frontend-take-home.fetchrewards.com/form')
-      .then(res => res.json())
+    fetchData()
       .then(data => {
         setOccupations(data.occupations);
         setStates(data.states);
@@ -62,13 +63,7 @@ const ComboForm = () => {
     setFormSubmitted(true);
 
     if (formData.name && formData.email && formData.password && formData.occupation && formData.state) {
-      fetch('https://frontend-take-home.fetchrewards.com/form', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      })
+      fetchData()
         .then(res => {
           if (res.status === 201) {
             console.log('Form submitted successfully');
@@ -77,6 +72,7 @@ const ComboForm = () => {
         .catch(error => console.error(error));
     }
   };
+
 
   return (
     <ThemeProvider theme={theme}>
