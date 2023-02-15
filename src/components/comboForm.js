@@ -182,7 +182,9 @@ const ComboForm = () => {
                 </FormControl>
 
                 <Button
-                  type="submit"
+                  // onClick={() => {
+                  //   alert('clicked');
+                  // }}
                   fullWidth
                   variant="contained"
                   sx={{ mt: 3, mb: 2 }}
