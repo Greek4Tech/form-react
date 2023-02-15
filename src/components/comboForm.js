@@ -18,8 +18,10 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 // import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
+import { useNavigate } from 'react-router-dom';
 
 const theme = createTheme();
+const navigate = useNavigate()
 
 const ComboForm = () => {
   const [occupations, setOccupations] = useState([]);
@@ -72,6 +74,7 @@ const ComboForm = () => {
         .then(res => {
           if (res.status === 201) {
             console.log('Form submitted successfully');
+            navigate('/success')
           }
         })
         .catch(error => console.error(error));
