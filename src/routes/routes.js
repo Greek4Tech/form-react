@@ -1,15 +1,15 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import ComboForm from '../components/comboForm';
 import Success from '../components/success';
 
-const Routes = () => {
+const AppRoutes = () => {
   return (
-    <Switch>
-      <Route exact path="/" component={ComboForm} />
-      <Route path="/success" component={Success} />
-    </Switch>
+    <Routes>
+      <Route path="/" element={<ComboForm />} />
+      <Route path="/success" element={<Success />} />
+    </Routes>
   );
 }
 
-export default Routes;
+export default AppRoutes;
