@@ -19,11 +19,13 @@ import Select from '@mui/material/Select';
 // import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
 import { fetchData } from '../services/formFetch';
+import { useNavigate } from 'react-router-dom';
 
 
 const theme = createTheme();
 
 const ComboForm = () => {
+  const navigate = useNavigate();
   const [occupations, setOccupations] = useState([]);
   const [states, setStates] = useState([]);
   const [formData, setFormData] = useState({
@@ -38,9 +40,13 @@ const ComboForm = () => {
 
   useEffect(() => {
     fetchData()
-      .then(data => {
-        setOccupations(data.occupations);
-        setStates(data.states);
+      .then(res => {
+        if (res.ok) {
+          res.json().then(data => {
+            setOccupations(data.occupations);
+            setStates(data.states);
+          });
+        }
       })
       .catch(error => console.error(error));
   }, []);
@@ -65,8 +71,9 @@ const ComboForm = () => {
     if (formData.name && formData.email && formData.password && formData.occupation && formData.state) {
       fetchData()
         .then(res => {
-          if (res.status === 201) {
+          if (res.ok) {
             console.log('Form submitted successfully');
+            navigate("/success");
           }
         })
         .catch(error => console.error(error));
@@ -189,9 +196,7 @@ const ComboForm = () => {
                 >
                   Submit
                 </Button>
-                {formSubmitted && (
-                  <div>Form submitted successfully</div>
-                )}
+              
               </Grid>
             </Grid>
 
